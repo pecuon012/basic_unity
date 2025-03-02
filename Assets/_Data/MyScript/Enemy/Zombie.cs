@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Zombie : Enemy
 {
-    string name = "meow";
-    protected override string Getname()
+    string name = "Zombie";
+    public override string Getname()
     {
         return this.name;
     }

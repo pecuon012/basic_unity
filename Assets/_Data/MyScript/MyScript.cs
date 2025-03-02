@@ -17,7 +17,7 @@ public class MyScript : MonoBehaviour
     {
         Zombie zombie = new Zombie();
         Wolf wofl = new Wolf();
-        zombie.Sethp(-50);
+        zombie.Sethp(-40);
         //string logmessage = zombie.Getname() + wofl.isdead();
         string logmessage = zombie.Getname() + ": " + zombie.GetCurrenthp() + " " + zombie.isdead();
         Debug.Log(logmessage);

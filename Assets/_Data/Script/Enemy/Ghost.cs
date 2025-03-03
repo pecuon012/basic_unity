@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Ghost : Enemy
 {
-    string name = "Ghost";
-    public override string Getname()
+       public override string Getname()
     {
-        return this.name;
+        return "Ghost";
     }
 }

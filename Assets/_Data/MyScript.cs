@@ -10,21 +10,15 @@ public class MyScript : MonoBehaviour
     {
         //TestClass();
         //TestOperator();
-        TestIsDead();
+        //TestIsDead();
     }
     void TestIsDead()
-        
     {
-        Zombie zombie = new Zombie();
-        Wolf wofl = new Wolf();
-        zombie.Sethp(-40);
-        //string logmessage = zombie.Getname() + wofl.isdead();
-        string logmessage = zombie.Getname() + ": " + zombie.GetCurrenthp() + " " + zombie.isdead();
-        Debug.Log(logmessage);
+        Debug.Log("hi");
     }
     void TestOperator()
     {
-        int variable = 100;
+        //int variable = 100;
         int cong = 200 + 100;
         int tru = 200 - 100;
         int nhan = 200 * 100;

@@ -6,6 +6,6 @@ public class Zombie : Enemy
 {
     public override string Getname()
     {
-        return "Zombie";
+        return "Z";
     }
 }

@@ -5,7 +5,9 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     int currenthp = 215;
-    float hpc = 10f;
+    float weight = 10f;
+    float minWeight = 1f;
+    float maxWeight = 20f;
     //string enemyname = "enemy";
     bool isDead = true;
     bool isBoss = true;
@@ -14,7 +16,14 @@ public abstract class Enemy : MonoBehaviour
         //TestClass();
         //Moving();
     }
-    public abstract string Getname(); // abstract luôn trên cùng 
+    public abstract string Getname(); // abstract luôn trên cùng
+
+    public virtual string GetObjName()
+    {
+        return transform.name;
+        //return gameObject.name; nh? nhau !
+        // có th? eneny.name con m? luôn ?i !
+    }
     private void TestClass()
     {
         Sethp(-50);
@@ -22,10 +31,29 @@ public abstract class Enemy : MonoBehaviour
         string logmessage = Getname() + ": " + GetCurrenthp() + " " + isdead();
         Debug.Log(logmessage);
     }
-
-    float Getweight()
+    private void OnEnable()
     {
-        return this.hpc;
+        InitData();
+    }
+    public virtual float GetMinWeight()
+    {
+        return minWeight;
+    }
+    public virtual float GetMaxWeight()
+    {
+        return maxWeight;
+    }
+    public virtual float Getweight()
+    {
+        return this.weight;
+    }
+    protected virtual void InitData()
+    {
+        weight = GetRandomWeight();
+    }
+    public virtual float GetRandomWeight() // hàm tr? giá tr? 
+    {
+        return Random.Range(minWeight, maxWeight);
     }
     public virtual int GetCurrenthp() //virtual khi hàm có body
     {
@@ -35,7 +63,7 @@ public abstract class Enemy : MonoBehaviour
     {
         currenthp = newhp;
     }
-    bool IsBoss()
+    public virtual bool IsBoss()
     {
         return this.isBoss;
     }

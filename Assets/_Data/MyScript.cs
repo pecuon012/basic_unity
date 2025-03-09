@@ -14,7 +14,7 @@ public class MyScript : MonoBehaviour
     }
     void TestIsDead()
     {
-        Debug.Log("hi");
+        Debug.Log("hinhoc");
     }
     void TestOperator()
     {

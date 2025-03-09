@@ -6,6 +6,6 @@ public class Wolf : Enemy
 {
     public override string Getname()
     {
-        return "Wolf";
+        return "W";
     }
 }
